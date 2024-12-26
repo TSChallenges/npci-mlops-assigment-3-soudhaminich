@@ -1,5 +1,1 @@
 # add required dependencies 
-gradio
-numpy
-pandas
-statistics
