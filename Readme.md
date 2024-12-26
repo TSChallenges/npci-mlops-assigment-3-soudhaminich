@@ -19,7 +19,7 @@ In this task, you will containerize a Python-based employer_stats app Your objec
     - Write down the required dependencies for the app along with their versions (if applicable) in a file named requirements.txt.
 
 3. Write a Dockerfile
-Create a Dockerfile to containerize the app.
+    - Create a Dockerfile to containerize the app.
 
 The Dockerfile should:
    - Use a Python base image (e.g., python:3.9-slim).
