@@ -41,6 +41,20 @@ def column_operations(column, operation):
     except Exception as e:
         return f"Error: {str(e)}"
 
+# Correlation function
+def calculate_correlation(column1, column2):
+    try:
+        col_data1 = data[column1]
+        col_data2 = data[column2]
+        
+        if not (pd.api.types.is_numeric_dtype(col_data1) and pd.api.types.is_numeric_dtype(col_data2)):
+            return f"Error: Both columns must contain numeric data."
+        
+        correlation = col_data1.corr(col_data2)
+        return f"The correlation between '{column1}' and '{column2}' is: {correlation}"
+    except Exception as e:
+        return f"Error: {str(e)}"
+
 # Gradio interface
 with gr.Blocks() as demo:
     # Section 1: Column Operations
@@ -54,10 +68,21 @@ with gr.Blocks() as demo:
     column_result_output = gr.Textbox(label="Result")
     column_calculate_button = gr.Button("Calculate Column Operation")
 
+    # Section 2: Correlation Calculation
+    gr.Markdown("### Correlation Between Two Columns")
+    with gr.Row():
+        column1_dropdown = gr.Dropdown(choices=data.columns.tolist(), label="Select First Column")
+        column2_dropdown = gr.Dropdown(choices=data.columns.tolist(), label="Select Second Column")
+    correlation_result_output = gr.Textbox(label="Correlation Result")
+    correlation_calculate_button = gr.Button("Calculate Correlation")
+
     # Link Functions to Buttons
     column_calculate_button.click(column_operations, 
                                   inputs=[column_dropdown, column_operation_input], 
                                   outputs=column_result_output)
+    correlation_calculate_button.click(calculate_correlation,
+                                       inputs=[column1_dropdown, column2_dropdown],
+                                       outputs=correlation_result_output)
 
 # Launch the Gradio app
 if __name__ == "__main__":
