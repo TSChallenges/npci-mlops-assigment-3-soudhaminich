@@ -1,6 +1,6 @@
-## Assignment-3 : Dockerizing employere_stats application
+## Assignment-3 : Dockerizing employee_stats application
 
-In this task, you will containerize a Python-based employee_stats app Your objective is to check the provided employere_stats_app.py file, identify the required Python dependencies, document them in requirements.txt, and create a Dockerfile to containerize the application.
+In this task, you will containerize a Python-based employee_stats app Your objective is to check the provided employee_stats_app.py file, identify the required Python dependencies, document them in requirements.txt, and create a Dockerfile to containerize the application.
 
 ### Objective
 
