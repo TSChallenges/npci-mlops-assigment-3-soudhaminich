@@ -1,4 +1,4 @@
-## Assignment-2 : Dockerizing Calculator application
+## Assignment-3 : Dockerizing Calculator application
 
 In this task, you will containerize a Python-based calculator app Your objective is to check the provided calculator.py file, identify the required Python dependencies, document them in requirements.txt, and create a Dockerfile to containerize the application.
 
